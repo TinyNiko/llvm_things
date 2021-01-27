@@ -1,0 +1,1 @@
+clang++ -g demo.cpp `llvm-config --cxxflags --ldflags --system-libs --libs core mcjit native orcjit` -rdynamic -O3 -o HowToUseJIT

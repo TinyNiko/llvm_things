@@ -1,0 +1,2 @@
+LLVM TEST
+cmake -G "Xcode"  -DLT_LLVM_INSTALL_DIR=$LLVM_DIR ../
