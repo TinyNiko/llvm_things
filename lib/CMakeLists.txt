@@ -2,11 +2,14 @@
 # ======================================================
 set(LLVM_TUTOR_PLUGINS
     InjectFuncCall
+    StaticCall
     )
 
 
 set(InjectFuncCall_SOURCES
   InjectFuncCall.cpp)
+set(StaticCall_SOURCES
+  staticCall.cpp)
 
 
 # CONFIGURE THE PLUGIN LIBRARIES
