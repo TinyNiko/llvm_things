@@ -1,1 +1,3 @@
-clang++ -g demo.cpp `llvm-config --cxxflags --ldflags --system-libs --libs core mcjit native orcjit` -rdynamic -O3 -o HowToUseJIT
+clang++ -g for.cpp `$LLVM_DIR/bin/llvm-config --cxxflags --ldflags --system-libs --libs core mcjit native orcjit` -rdynamic -O3 -o for_test
+clang++ -g demo.cpp `$LLVM_DIR/bin/llvm-config --cxxflags --ldflags --system-libs --libs core mcjit native orcjit` -rdynamic -O3 -o simple_add
+clang++ -g while.cpp `$LLVM_DIR/bin/llvm-config --cxxflags --ldflags --system-libs --libs core mcjit native orcjit` -rdynamic -O3 -o while_demo

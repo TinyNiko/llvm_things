@@ -4,6 +4,11 @@ set(LLVM_TUTOR_PLUGINS
     InjectFuncCall
     StaticCall
     DynCall
+    MBASUB
+    MBAADD
+    RIV
+    DuplicateBB
+    MergeBB
     )
 
 
@@ -13,6 +18,18 @@ set(StaticCall_SOURCES
   staticCall.cpp)
 set(DynCall_SOURCES
   dynCall.cpp)
+set(MBASUB_SOURCES
+  MBASUB.cpp
+  Ratio.cpp)
+set(MBAADD_SOURCES
+  MBAADD.cpp
+  Ratio.cpp)
+set(RIV_SOURCES
+  RIV.cpp)
+set(DuplicateBB_SOURCES
+  DuplicateBB.cpp)
+set(MergeBB_SOURCES
+  MergeBB.cpp)
 
 # CONFIGURE THE PLUGIN LIBRARIES
 # ==============================

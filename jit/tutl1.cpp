@@ -7,7 +7,7 @@
 
 #include "llvm/Support/raw_ostream.h"
 
-
+using namespace std;
 using namespace llvm;
 
 void makeLLVMModule2() {
@@ -27,8 +27,7 @@ void makeLLVMModule2() {
             /*Params=*/FuncTy_args,  // taking no args
             /*isVarArg=*/false);
 
-    Constant *c = mod->getOrInsertFunction("gcd", FuncTy);
-    Function *gcd = cast<Function>(c);
+    Function *gcd = dyn_cast<Function>(mod->getOrInsertFunction("gcd", FuncTy).getCallee());
 
     Function::arg_iterator args = gcd->arg_begin();
     Value *x = args++;
@@ -91,9 +90,7 @@ void makeLLVMModule() {
             /*Params=*/FuncTy_args,  // taking no args
             /*isVarArg=*/false);
 
-    Constant *c = mod->getOrInsertFunction("mul_add", FuncTy);
-
-    Function *mul_add = cast<Function>(c);
+    Function *mul_add = dyn_cast<Function>(mod->getOrInsertFunction("mul_add", FuncTy).getCallee());
     mul_add->setCallingConv(CallingConv::C);
 
     Function::arg_iterator args = mul_add->arg_begin();
@@ -118,14 +115,6 @@ void makeLLVMModule() {
 }
 
 int main(int argc, char **argv) {
-//    Module *Mod = makeLLVMModule();
-//    Module *Mod2 = makeLLVMModule2();
-
-//    outs() << "We just constructed this LLVM module:\n\n" << *Mod;
-//    outs() << "We just constructed this LLVM module:\n\n" << *Mod2;
-//    outs().flush();
-
-//    delete Mod;
     makeLLVMModule();
     makeLLVMModule2();
     return 0;

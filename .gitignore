@@ -2,3 +2,4 @@ output/
 .vscode/
 build/
 **/.DS_Store
+jit/HowToUseJIT*
